@@ -19,36 +19,46 @@ package version5;
  * of polymorphism, dynamically asign a different QuackBehavior
  * implementation at runtime. We'll see this later.
  */
-public class MallardDuck implements Duck {
+public class MallardDuck implements FlyQuackAndSwim {
 
     private FlyStrategy fs;
     private QuackStrategy qs;
+    private SwimStrategy ss;
 
-    public MallardDuck(FlyStrategy fs, QuackStrategy qs) {
+    public MallardDuck(FlyStrategy fs, QuackStrategy qs, SwimStrategy ss) {
         this.fs = fs;
         this.qs = qs;
+        this.ss = ss;
     }
 
-    public void setQuack(QuackStrategy qs) {
+    @Override
+    public void setQuackStrategy(QuackStrategy qs) {
         this.qs = qs;
     }
     
-    public void setFlyStrategy(FlyStrategy fs) {
-        this.fs = fs;
-    }
-
+    @Override
     public void performQuack() {
         qs.quack();
     }
-
+    
+    @Override
+    public void setFlyStrategy(FlyStrategy fs) {
+        this.fs = fs;
+    }
+    
+     @Override
     public void performFly() {
         fs.fly();
     }
-
-    public FlyStrategy getFs() {
-        return fs;
+    
+    public void setSwimStrategy(SwimStrategy ss){
+        this.ss = ss;
     }
 
+    @Override
+    public void swim(){
+        ss.swim();
+    }
     @Override
     public void display() {
         System.out.println("I'm a Mallard Duck");

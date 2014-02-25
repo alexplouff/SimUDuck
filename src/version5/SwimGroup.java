@@ -10,8 +10,9 @@ package version5;
  *
  * @author Alex
  */
-public interface PerformFlyStrategy {
+public interface SwimGroup extends Duck{
     
-    public abstract void setFlyBehavior();
-    public abstract String getFlyBehavior();
+    public abstract void setSwimStrategy(SwimStrategy ss);
+    
+    public void performSwim();
 }

@@ -10,10 +10,6 @@ package version5;
  *
  * @author Alex
  */
-public class Swim implements SwimStrategy {
+public interface FlyAndQuack extends Duck, FlyGroup, QuackGroup{
     
-    @Override
-    public void swim(){
-        System.out.println("Swimming, or floating.....");
-    }
 }
