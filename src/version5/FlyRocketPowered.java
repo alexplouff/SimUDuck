@@ -1,8 +1,8 @@
 package version5;
 
-import version5.FlyBehaviorStrategy;
 
-public class FlyRocketPowered implements FlyBehaviorStrategy {
+
+public class FlyRocketPowered implements FlyStrategy {
     
     
 	public void fly() {

@@ -1,6 +1,6 @@
 package version5;
 
-public interface FlyBehaviorStrategy {
+public interface FlyStrategy {
     
         
 	public abstract void fly();

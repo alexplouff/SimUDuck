@@ -21,46 +21,32 @@ package version5;
  */
 public class MallardDuck implements Duck {
 
-    private FlyBehaviorStrategy fbs;
-    private QuackBehaviorStrategy qbs;
+    private FlyStrategy fs;
+    private QuackStrategy qs;
 
-    public MallardDuck(FlyBehaviorStrategy fbs, QuackBehaviorStrategy qbs) {
-
-        this.fbs = fbs;
-        this.qbs = qbs;
+    public MallardDuck(FlyStrategy fs, QuackStrategy qs) {
+        this.fs = fs;
+        this.qs = qs;
     }
 
-    public void setQuack(QuackBehaviorStrategy qbs) {
-        setQuack(qbs);
+    public void setQuack(QuackStrategy qs) {
+        this.qs = qs;
+    }
+    
+    public void setFlyStrategy(FlyStrategy fs) {
+        this.fs = fs;
     }
 
     public void performQuack() {
-        qbs.quack();
+        qs.quack();
     }
 
     public void performFly() {
-        fbs.fly();
+        fs.fly();
     }
 
-    public FlyBehaviorStrategy getFbs() {
-        return fbs;
-    }
-
-    public void setFbs(FlyBehaviorStrategy fbs) {
-        this.fbs = fbs;
-    }
-
-    public QuackBehaviorStrategy getQbs() {
-        return qbs;
-    }
-
-    public void setQbs(QuackBehaviorStrategy qbs) {
-        this.qbs = qbs;
-    }
-
-    @Override
-    public void swim() {
-        System.out.println("Swimming");
+    public FlyStrategy getFs() {
+        return fs;
     }
 
     @Override
@@ -69,3 +55,5 @@ public class MallardDuck implements Duck {
     }
 
 }
+
+//swim

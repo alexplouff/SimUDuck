@@ -1,6 +1,6 @@
 package version5;
 
-public class FlyNoWay implements FlyBehaviorStrategy {
+public class FlyNoWay implements FlyStrategy {
 
         @Override
 	public void fly() {

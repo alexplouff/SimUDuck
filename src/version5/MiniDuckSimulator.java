@@ -4,14 +4,12 @@ public class MiniDuckSimulator {
 
 	public static void main(String[] args) {
             
-                FlyBehaviorStrategy fbs;
-                QuackBehaviorStrategy qbs;
+                FlyStrategy fbs;
+                QuackStrategy qbs;
             
                 Duck mallard = new MallardDuck( new FlyWithWings() , new Quack() );
                 mallard.display();
                 mallard.swim();
-                
-                
             
 		mallard.performQuack();
 		mallard.performFly();
