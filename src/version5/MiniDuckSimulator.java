@@ -26,12 +26,25 @@ public class MiniDuckSimulator {
                     
                 };
                 
-                for (QuackGroup duck : ducks){
-                    duck.display();
-                    duck.performQuack();
-                    duck.swim();
-                    
+//                for (QuackGroup duck : ducks){
+//                    duck.display();
+//                    duck.performQuack();
+               //     duck.swim();
+               // }   
+                
+                
+                FlyQuackAndSwim [] fqs ={
+                    new MallardDuck(new FlyWithWings(), new Quack(), new Swim())
+                };
+                
+                for (FlyQuackAndSwim fqas : fqs){
+                    fqas.display();
+                    fqas.performQuack();
+                    fqas.performFly();
+                    fqas.setFlyStrategy(new FlyRocketPowered());
+                    fqas.performFly();
                 }
+                
 //		 Duck model = new ModelDuck();
 //		model.display();
 //                model.swim();
